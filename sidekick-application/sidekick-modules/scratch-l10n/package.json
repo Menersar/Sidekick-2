@@ -1,0 +1,60 @@
+{
+  "name": "scratch-l10n",
+  "version": "3.1.9",
+  "description": "Localization for the Scratch 3.0 components.",
+  "main": "dist/scratch-l10n.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLK/scratch-l10n.git"
+  },
+  "bin": {
+    "build-i18n-src": "./scripts/build-i18n-src.js",
+    "poe-push": "./scripts/poe-push.js"
+  },
+  "author": "Massachusetts Institute of Technology",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "yarn run clean && yarn run build:data && webpack --progress --colors --bail",
+    "build:data": "babel-node scripts/build-data",
+    "clean": "rimraf ./dist && mkdirp dist",
+    "pull": "babel-node scripts/poe-pull ./locale/"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@formatjs/intl-pluralrules": "^4.3.2",
+    "babel-plugin-react-intl": "^3.0.1",
+    "form-data": "^4.0.0",
+    "poeditor-api": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/node": "7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.0.0",
+    "async": "2.6.4",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "8.0.5",
+    "eslint": "^5.0.1",
+    "eslint-config-scratch": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.5.1",
+    "format-message-cli": "6.2.1",
+    "format-message-parse": "6.2.0",
+    "glob": "7.1.3",
+    "jshint": "2.9.7",
+    "json": "^10.0.0",
+    "jsonlint": "1.6.3",
+    "lodash.defaultsdeep": "4.6.1",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^2.6.0",
+    "p-limit": "2.1.0",
+    "p-queue": "3.0.0",
+    "react-intl": "3.12.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^3.1.2"
+  }
+}

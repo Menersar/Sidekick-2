@@ -1,0 +1,17 @@
+{
+    "sidekickteam.sidekick.name": "Sidekick",
+    "sidekickteam.sidekick.category": "Sidekick",
+    "sidekickteam.sidekick.description": "Sidekick extension.",
+    "sidekickteam.sidekick.setLEDColor": "Set LED [LED_NUMBER] to [COLOUR].",
+    
+    
+    "sidekickteam.sidekick.menu.LED.1": "LED 1",
+    "sidekickteam.sidekick.menu.LED.2": "LED 2",
+    "sidekickteam.sidekick.menu.LED.3": "LED 3",
+    "sidekickteam.sidekick.menu.LED.4": "LED 4",
+    "sidekickteam.sidekick.menu.LED.5": "LED 5",
+    "sidekickteam.sidekick.menu.LED.6": "LED 6",
+    "sidekickteam.sidekick.menu.LED.7": "LED 7",
+    "sidekickteam.sidekick.menu.LED.10": "LED 8",
+    "sidekickteam.sidekick.menu.LED.11": "LED 9"
+}

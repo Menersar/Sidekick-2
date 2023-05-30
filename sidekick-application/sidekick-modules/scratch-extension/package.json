@@ -1,0 +1,32 @@
+{
+  "name": "scratch-extension",
+  "version": "0.2.0",
+  "description": "Sidekick extension development / creation kit.",
+  "main": "./dist/sidekick-extension.js",
+  "types": "./dist/sidekick-extension.d.ts",
+  "repository": "https://github.com/Menersar/sidekick-extension.git",
+  "author": "",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "prepublishOnly": "NODE_ENV=production yarn run build",
+    "build": "rimraf dist && mkdirp dist && webpack --progress --colors --bail",
+    "jsdoc": "rimraf doc && jsdoc -c jsdoc.config.json",
+    "test": "node test/index.js",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.2",
+    "docdash": "^1.2.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jsdoc": "^3.6.6",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "uglify-es-webpack-plugin": "^0.10.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

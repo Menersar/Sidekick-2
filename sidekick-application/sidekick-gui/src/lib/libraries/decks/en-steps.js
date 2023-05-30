@@ -1,0 +1,2 @@
+const enImages = {};
+export {enImages};

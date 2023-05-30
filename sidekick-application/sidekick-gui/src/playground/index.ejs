@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" value="notranslate">
+    <link rel="shortcut icon" href="static/favicon.ico">
+    <meta property="og:title" content="Sidekick Editor" />
+    <meta property="og:site_name" content="Sidekick" />
+    <meta property="og:image" content="static/social.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="Sidekick is a scratch fork with added features to serve the application's goal as part of a digital assistance system." />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <!-- <script defer data-domain="scratch.mit.edu" src="https://analytic.scratch.mit.edu/js/plausible.js"></script> -->
+    <% if (htmlWebpackPlugin.options.enablePWA ) { %>
+        <!--<meta name="viewport" content="width=device-width, user-scalable=no" />-->
+        <link rel="manifest" href="manifest.webmanifest">
+        <script>
+            if (navigator.serviceWorker) {
+                navigator.serviceWorker.register('sw.js').then(registration => {
+                    console.log('[Service Worker] Registration succeeded at scope: ', registration.scope);
+                }, error => {
+                    console.log('[Service Worker] Registration failed: ', error);
+                });
+            }
+        </script>
+        <% } %>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div
+        style="z-index:-100;left:0;top:0;position:absolute;display:flex;justify-content:right;align-items:center;width:100%;height:100%;user-select: none;">
+        <svg id="loading-text" class="loading-text" width="50%" height="50%" viewBox="0 0 100% 100%" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <text x="112px" y="50%" id="text-animation" class="text-animation" font-size="175%" font-family="Verdana"
+                fill="333333" stroke="#FFFFFF">
+                Loading
+            </text>
+
+            <!-- <text x="15%" y="50%" id="text-animation" class="text-animation" font-size="175%" font-family="Verdana" fill="333333"
+                stroke="#FFFFFF">
+                Loading
+            </text> -->
+
+            <!-- <text x="31% + 232px" y="50%" id="text-animation" class="text-animation" font-size="175%" font-family="Verdana" -->
+            <text x="232px" y="50%" id="text-animation" class="text-animation" font-size="175%" font-family="Verdana"
+                stroke="#B6D597">
+                Sidekick
+            </text>
+            <!-- <path>Sidekick is loading...</path> -->
+        </svg>
+    </div>
+
+    <div id="loading-screen"
+        style="z-index:-100;left:0;top:0;position:absolute;display:flex;justify-content:center;align-items:center;width:100%;height:100%;">
+
+        <style scoped>
+            @-webkit-keyframes animate-icon {
+                0% {
+                    stroke-dashoffset: 367.1521911621094px;
+                    stroke-dasharray: 367.1521911621094px;
+                    stroke-width: 0;
+                }
+
+                5% {
+                    stroke-width: 6.4;
+                }
+
+                25% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 367.1521911621094px;
+                }
+
+                75% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 367.1521911621094px;
+                }
+
+                100% {
+                    stroke-dashoffset: -367.1521911621094px;
+                    stroke-dasharray: 367.1521911621094px;
+                    stroke-width: 6.4;
+                }
+            }
+
+            @keyframes animate-icon {
+                0% {
+                    stroke-dashoffset: 367.1521911621094px;
+                    stroke-dasharray: 367.1521911621094px;
+                    stroke-width: 0;
+                }
+
+                5% {
+                    stroke-width: 6.4;
+                }
+
+                25% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 367.1521911621094px;
+                }
+
+                75% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 367.1521911621094px;
+                }
+
+                100% {
+                    stroke-dashoffset: -367.1521911621094px;
+                    stroke-dasharray: 367.1521911621094px;
+                    stroke-width: 6.4;
+                }
+            }
+
+            @-webkit-keyframes animate-text {
+                0% {
+                    stroke-dashoffset: 100%;
+                    stroke-dasharray: 0;
+                    stroke-width: 0;
+                }
+
+                5% {
+                    stroke-width: 1;
+                }
+
+                25% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 100%;
+                }
+
+                75% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 100%;
+                }
+
+                100% {}
+            }
+
+            @keyframes animate-text {
+                0% {
+                    stroke-dashoffset: 100%;
+                    stroke-dasharray: 0;
+                    stroke-width: 0;
+                }
+
+                5% {
+                    stroke-width: 1;
+                }
+
+                25% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 100%;
+                }
+
+                75% {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 100%;
+                }
+
+                100% {}
+            }
+
+            .icon-animation {
+                -webkit-animation: animate-icon 4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+                animation: animate-icon 4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            }
+
+            .block-animation {
+                width: 125px;
+                height: 150px;
+                margin: 50px auto 0px;
+                display: none;
+            }
+
+            .block-animation img {
+                display: block;
+                position: relative;
+                height: 30%;
+                margin-top: -4px;
+            }
+
+            .top-block {
+                animation: top-slide-in 2s ease infinite;
+            }
+
+            .middle-block {
+                animation: middle-slide-in 2s ease infinite;
+            }
+
+            .bottom-block {
+                animation: bottom-slide-in 2s ease infinite;
+            }
+
+            [dir="rtl"] .top-block {
+                animation: top-slide-in-rtl 2s ease infinite;
+            }
+
+            [dir="rtl"] .middle-block {
+                animation: middle-slide-in-rtl 2s ease infinite;
+            }
+
+            [dir="rtl"] .bottom-block {
+                animation: bottom-slide-in-rtl 2s ease infinite;
+            }
+
+            @keyframes top-slide-in {
+                0% {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+
+                25% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                75% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes middle-slide-in {
+                0% {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+
+                25% {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+
+                50% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                75% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes bottom-slide-in {
+                0% {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+
+                50% {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+
+                75% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes top-slide-in-rtl {
+                0% {
+                    transform: translateY(50px) scaleX(-1);
+                    opacity: 0;
+                }
+
+                33% {
+                    transform: translateY(0px) scaleX(-1);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(0px) scaleX(-1);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes middle-slide-in-rtl {
+                0% {
+                    transform: translateY(50px) scaleX(-1);
+                    opacity: 0;
+                }
+
+                33% {
+                    transform: translateY(50px) scaleX(-1);
+                    opacity: 0;
+                }
+
+                66% {
+                    transform: translateY(0px) scaleX(-1);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(0px) scaleX(-1);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes bottom-slide-in-rtl {
+                0% {
+                    transform: translateY(50px) scaleX(-1);
+                    opacity: 0;
+                }
+
+                66% {
+                    transform: translateY(50px) scaleX(-1);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateY(0px) scaleX(-1);
+                    opacity: 1;
+                }
+            }
+
+            .text-animation {
+                text-align: center;
+                -webkit-animation: animate-text 1s linear 2s both;
+                animation: animate-text 1s linear 2s both;
+            }
+        </style>
+        <div>
+
+
+            <!-- <svg id="loading-icon" class="loading-icon" width="128" height="128" viewBox="0 0 128 128" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path id="icon-animation"
+                    d="M58.3431 49.955L37.9785 70.3196C23.2707 85.0274 41.3726 103.129 56.0804 88.4216L96.8097 47.6922C114.912 29.5903 87.7588 2.43739 69.6568 20.5393L28.9275 61.2687C1.77464 88.4215 37.9785 124.625 65.1314 97.4725L85.496 77.1079"
+                    stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" class="icon-animation"></path>
+            </svg> -->
+
+
+            <div id="block-animation" class="block-animation">
+                <img data-src="static/top-block.svg" class="top-block" />
+                <img data-src="static/middle-block.svg" class="middle-block" />
+                <img data-src="static/bottom-block.svg" class="bottom-block" />
+            </div>
+
+
+        </div>
+
+
+        <script>
+            var l = document.getElementById("loading-screen");
+            // var i = document.getElementById("loading-icon");
+            var t = document.getElementById("loading-text");
+            // var ia = document.getElementById("icon-animation");
+            var ta = document.getElementById("text-animation");
+            var ba = document.getElementById("block-animation");
+            var dataEl = document.querySelectorAll("img[data-src]");
+            dataEl.forEach(function (el) {
+                el.setAttribute("src", el.getAttribute("data-src"));
+            });
+            var darkMode = localStorage.getItem("darkMode");
+            // window.addEventListener("load", function () {
+            //     l.parentNode.removeChild(l);
+            // });
+
+            // ia.addEventListener("animationend", function (evt) {
+            //     i.style.display = "none";
+            //     setTimeout(function () {
+            //         ba.style.display = "block";
+            //     }, 250);
+            // });
+
+            ta.addEventListener("animationend", function (evt) {
+                // t.style.display = "none";
+                setTimeout(function () {
+                    ba.style.display = "block";
+                }, 250);
+            });
+
+
+            switch (darkMode) {
+                case "light":
+                    p.style.backgroundColor = "rgb(53, 129, 234)";
+                    break;
+                case "dark":
+                    p.style.backgroundColor = "rgb(37, 41, 50)";
+                    p.style.color = "white";
+                    break;
+                case "system":
+                default:
+                    if (matchMedia("(prefers-color-scheme: dark)").matches) {
+                        p.style.backgroundColor = "rgb(37, 41, 50)";
+                        p.style.color = "white";
+                    } else {
+                        p.style.backgroundColor = "rgb(53, 129, 234)";
+                    }
+                    break;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

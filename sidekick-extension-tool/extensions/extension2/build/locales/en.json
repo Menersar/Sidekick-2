@@ -1,0 +1,8 @@
+{
+    "author.exampleid.name": "Example",
+    "author.exampleid.category": "Example",
+    "author.exampleid.description": "Scratch example extension",
+    "author.exampleid.return": "return [VALUE]",
+    "author.exampleid.helloworld": "Hello World!"
+
+}
