@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "file": "scratch-l10n.js",
+    "sources": [
+        "webpack:///scratch-l10n.js"
+    ],
+    "mappings": "AAAA;;;;;;;;;;;;;;;AAo/DA",
+    "sourceRoot": ""
+}
