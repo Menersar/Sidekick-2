@@ -1,5 +1,5 @@
 {
-    "name": "scratch-desktop",
+    "name": "sidekick-desktop",
     "productName": "Sidekick",
     "description": "Sidekick programming environment",
     "author": {
@@ -73,7 +73,7 @@
         "postcss-import": "12.0.0",
         "postcss-loader": "3.0.0",
         "postcss-simple-vars": "5.0.1",
-        "scratch-extension": "/sidekick-modules/scratch-extension",
+        "scratch-extension": "file:..\\sidekick-modules\\scratch-extension\\",
         "source-map-support": "^0.5.19"
     },
     "devDependencies": {
@@ -114,7 +114,7 @@
         "react-redux": "7.2.6",
         "redux": "4.1.2",
         "rimraf": "^3.0.2",
-        "scratch-gui": "/sidekick-gui",
+        "scratch-gui": "file:..\\sidekick-gui\\",
         "terser-webpack-plugin": "4",
         "uuid": "^8.0.0",
         "webpack": "^4.43.0"

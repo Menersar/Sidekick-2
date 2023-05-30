@@ -3,7 +3,7 @@ Sidekick as a standalone desktop application
 
 ### Prepare media library assets
 
-In the `scratch-desktop` directory, run `npm run fetch`. Re-run this any time you update `scratch-gui` or make any
+In the `sidekick-desktop` directory, run `npm run fetch`. Re-run this any time you update `sidekick-gui` or make any
 other changes which might affect the media libraries.
 
 ### Run in development mode

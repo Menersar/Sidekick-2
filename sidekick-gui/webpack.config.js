@@ -299,7 +299,7 @@ module.exports = [
                         context: 'node_modules/scratch-vm/dist/web'
                     }]
                 }),
-                // Include library JSON files for scratch-desktop to use for downloading
+                // Include library JSON files for sidekick-desktop to use for downloading
                 new CopyWebpackPlugin({
                     patterns: [{
                         from: 'src/lib/libraries/*.json',

@@ -9965,10 +9965,10 @@ scratch-audio@^0.1.0-prerelease.20200528195344:
     google-closure-compiler-osx "^20200112.0.0"
     google-closure-compiler-windows "^20200112.0.0"
 
-scratch-extension@../sidekick-modules/scratch-extension, "scratch-extension@file:../sidekick-modules/scratch-extension":
+"scratch-extension@file:../sidekick-modules/scratch-extension":
   version "0.2.0"
 
-scratch-gui@../sidekick-gui:
+"scratch-gui@file:../sidekick-gui":
   version "3.1.15"
   dependencies:
     "@sentry/react" "^6.16.1"
@@ -10025,11 +10025,11 @@ scratch-gui@../sidekick-gui:
     redux "4.1.2"
     redux-throttle "0.1.1"
     scratch-audio "^0.1.0-prerelease.20200528195344"
-    scratch-block "file:../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-cb1a300d-1896-472d-b0cf-38686da42a96-1685409430923/node_modules/sidekick-modules/scratch-block"
-    scratch-extension "file:../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-cb1a300d-1896-472d-b0cf-38686da42a96-1685409430923/node_modules/sidekick-modules/scratch-extension"
-    scratch-l10n "file:../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-cb1a300d-1896-472d-b0cf-38686da42a96-1685409430923/node_modules/sidekick-modules/scratch-l10n"
-    scratch-paint "file:../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-cb1a300d-1896-472d-b0cf-38686da42a96-1685409430923/node_modules/sidekick-modules/scratch-paint"
-    scratch-render "file:../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-cb1a300d-1896-472d-b0cf-38686da42a96-1685409430923/node_modules/sidekick-modules/scratch-render"
+    scratch-block "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-block"
+    scratch-extension "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-extension"
+    scratch-l10n "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-l10n"
+    scratch-paint "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-paint"
+    scratch-render "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-render"
     scratch-render-fonts "1.0.0-prerelease.20210401210003"
     scratch-storage "2.0.2"
     scratch-svg-renderer "^0.2.0-prerelease.20220912180225"
