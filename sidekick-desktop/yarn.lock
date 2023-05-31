@@ -7503,7 +7503,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
   integrity sha512-jttmRe7bRse52OsWIMDLaXxWqRAmtIUccAQ3garviCqJjafXOfNMO0yMfNpdD6zbGaTU0P5Nz7e7gAT6cKmJRw==
 
-lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.5, lodash@^4.2.0:
+lodash@^4.13.0, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.5, lodash@^4.2.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -9823,6 +9823,13 @@ roarr@^2.15.3:
     semver-compare "^1.0.0"
     sprintf-js "^1.1.2"
 
+ruby@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/ruby/-/ruby-0.6.1.tgz#b3fee5787e4f9c0d5814d6166a5b5dbcfb24ba35"
+  integrity sha512-TjMB+HyxathhcgvtQ3jkYWWjW3t9q+3VPLe0jpsm1x8tryXJ3626rO6gQ+0S12Oyac+Glp6KDuy1JBdKND+eSQ==
+  dependencies:
+    lodash "^4.13.0"
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"
@@ -10025,11 +10032,11 @@ scratch-audio@^0.1.0-prerelease.20200528195344:
     redux "4.1.2"
     redux-throttle "0.1.1"
     scratch-audio "^0.1.0-prerelease.20200528195344"
-    scratch-block "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-block"
-    scratch-extension "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-extension"
-    scratch-l10n "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-l10n"
-    scratch-paint "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-paint"
-    scratch-render "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-0e6bd541-3771-49c1-a7ee-40105e97fb63-1685422035481/node_modules/sidekick-modules/scratch-render"
+    scratch-block "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-c15746fd-1d71-46ec-8ea5-293d9dea4c50-1685424821637/node_modules/sidekick-modules/scratch-block"
+    scratch-extension "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-c15746fd-1d71-46ec-8ea5-293d9dea4c50-1685424821637/node_modules/sidekick-modules/scratch-extension"
+    scratch-l10n "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-c15746fd-1d71-46ec-8ea5-293d9dea4c50-1685424821637/node_modules/sidekick-modules/scratch-l10n"
+    scratch-paint "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-c15746fd-1d71-46ec-8ea5-293d9dea4c50-1685424821637/node_modules/sidekick-modules/scratch-paint"
+    scratch-render "file:../../../../AppData/Local/Yarn/Cache/v6/npm-scratch-gui-3.1.15-c15746fd-1d71-46ec-8ea5-293d9dea4c50-1685424821637/node_modules/sidekick-modules/scratch-render"
     scratch-render-fonts "1.0.0-prerelease.20210401210003"
     scratch-storage "2.0.2"
     scratch-svg-renderer "^0.2.0-prerelease.20220912180225"
